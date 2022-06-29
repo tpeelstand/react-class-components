@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- React Library -->
+     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+     <!-- React DOM -->
+     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+     <!-- BABEL Library -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js" integrity="sha512-kp7YHLxuJDJcOzStgd6vtpxr4ZU9kjn77e6dBsivSz+pUuAuMlE2UTdKB7jjsWT84qbS8kdCWHPETnP/ctrFsA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <title>Class Components</title>
+    <style>
+        .mainNav {
+            display: flex;
+            padding: 0;
+            background: #333;
+            width: 100%;
+        }
+        .mainNav ul li {
+            display: flex;
+            float: left;
+            padding: 5px 10px;
+            color: #FFF;
+            font-size: 14px;
+        }
+        .mainNav ul li:hover {
+            background: orange;
+            color: #222;
+            cursor: pointer;
+        }
+
+        .leftSide {
+            width: 80%;
+            background: #F2F2F2;
+            float: left;
+            height: 100vh;
+        }
+        .leftSide p {
+            padding: 10px;
+        }
+        .rightSide {
+            width: 20%;
+            background: #333;
+            color: #FFF;
+            float: left;
+            height: 100vh;
+        }
+        .rightSide p {
+            padding: 10px;
+        }
+
+        footer {
+            width: 100%;
+            background: orange;
+            text-align: center;
+            clear: both;
+        }
+        footer p {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="app">React has not yet rendered.</div>
+
+    <script type="text/babel">
+        class Nav extends React.Component {
+            render() {
+                return (
+                    <nav class="mainNav">
+                        <ul>
+                            <li>About</li>
+                            <li>Team</li>
+                            <li>Projects</li>
+                            <li>Requests</li>
+                            <li>Contact</li>    
+                        </ul>    
+                    </nav>
+                );
+            }
+        }
+
+        class LeftSide extends React.Component {
+            render() {
+                return(
+                    <div class="leftSide">
+                        <p>This is where the left side element would be.</p>
+                    </div>
+                );
+            }
+        }
+
+        class RightSide extends React.Component {
+            render() {
+                return (
+                    <div class="rightSide">
+                        <p>This would be the right side.</p>
+                    </div>
+                );
+            }
+        }
+        class Footer extends React.Component {
+            render() {
+                return (
+                    <footer>
+                        <p>This would be the footer at the bottom.</p>
+                    </footer>
+                );
+            }
+        }
+        ReactDOM.render(
+            <div>
+                <Nav/>
+                <LeftSide/>
+                <RightSide/>
+                <Footer/>
+            </div>,
+            document.getElementById('app')
+        );
+        
+    </script>
+</body>
+</html>
